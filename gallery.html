@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo gallery — Sebastien Arokeum</title>
+  <meta name="description" content="Photos: professional work, Rotaract and Rotary, travel, and outdoor life — Sebastien Alessandro Arokeum.">
+  <meta name="theme-color" id="theme-color-meta" content="#0c0f14">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var colors = { original: { light: '#f4f6f9', dark: '#0c0f14' }, apple: { light: '#f5f5f7', dark: '#000000' }, google: { light: '#f8f9fa', dark: '#131314' } };
+      try {
+        var a = localStorage.getItem('appearance');
+        if (!a) {
+          var leg = localStorage.getItem('theme');
+          if (leg === 'light' || leg === 'dark') {
+            a = leg;
+            localStorage.setItem('appearance', a);
+            localStorage.removeItem('theme');
+          } else {
+            a = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+        }
+        d.setAttribute('data-appearance', a);
+      } catch (e) {
+        d.setAttribute('data-appearance', 'dark');
+      }
+      var v = localStorage.getItem('visualTheme');
+      d.setAttribute('data-visual', (v === 'apple' || v === 'google' || v === 'original') ? v : 'original');
+      var m = document.getElementById('theme-color-meta');
+      if (m) {
+        var vis = d.getAttribute('data-visual');
+        var ap = d.getAttribute('data-appearance');
+        m.content = (colors[vis] && colors[vis][ap]) || '#0c0f14';
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,600;1,8..144,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="site-shell">
+    <aside class="site-sidebar" id="site-sidebar" aria-label="Site">
+      <div class="site-sidebar__inner">
+        <a class="logo" href="index.html">Sebastien Arokeum</a>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <a href="index.html#top">Profile</a>
+          <a href="index.html#delivery">Delivery</a>
+          <a href="index.html#ai">AI</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#recommendations">Recommendations</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#certifications">Certifications</a>
+          <a href="index.html#volunteering">Volunteering</a>
+          <a href="gallery.html" aria-current="page">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="site-sidebar__footer">
+          <div class="theme-picker">
+            <label class="theme-picker__label" for="visual-theme">Design</label>
+            <select id="visual-theme" class="theme-select" aria-label="Choose site design theme. Selection is saved as default in this browser." title="Saved as your default on this device">
+              <option value="original">Original</option>
+              <option value="apple">Apple</option>
+              <option value="google">Google</option>
+            </select>
+          </div>
+          <button type="button" class="theme-toggle theme-toggle--sidebar" data-theme-toggle aria-pressed="false" title="Toggle light / dark appearance">
+            <span class="visually-hidden">Toggle light / dark appearance</span>
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a class="site-nav__cta" href="https://www.linkedin.com/in/sebastien-alessandro-arokeum/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="site-content">
+      <div class="site-drawer-backdrop" id="site-drawer-backdrop" aria-hidden="true"></div>
+      <header class="site-topbar" aria-label="Current section">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-sidebar" aria-label="Open menu">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <p class="site-topbar__label" id="current-section-label" aria-live="polite">Gallery</p>
+        <button type="button" class="theme-toggle theme-toggle--topbar" data-theme-toggle aria-pressed="false" title="Toggle light / dark appearance">
+          <span class="visually-hidden">Toggle light / dark appearance</span>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </header>
+
+      <main id="main" class="section">
+    <div class="section__inner">
+      <p class="eyebrow">Gallery</p>
+      <h1 class="section__title">Photos</h1>
+      <p class="gallery-page__intro">Professional portraits, Rotaract and Rotary moments, and personal travel and outdoors—click any image to open the full size in a new tab.</p>
+
+      <ul class="gallery-grid">
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/hero-professional.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/hero-professional.png" width="480" height="640" loading="lazy" alt="Evening portrait, blazer and Rotary-related lapel pins.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Evening professional</strong> — blazer, lapel pins, outdoor lighting</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/headshot-studio.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/headshot-studio.png" width="480" height="640" loading="lazy" alt="Formal headshot with navy suit, white shirt, and red tie on dark background.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Studio headshot</strong> — suit and red tie</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/professional-outdoor-event.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/professional-outdoor-event.png" width="480" height="640" loading="lazy" alt="Navy suit and red tie at an outdoor evening event with trees and buildings.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Outdoor evening</strong> — formal dress, social setting</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/lifestyle-smart-casual.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/lifestyle-smart-casual.png" width="480" height="640" loading="lazy" alt="Black blazer, white t-shirt, and jeans outdoors under a tree.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Smart-casual</strong> — blazer, outdoor daylight</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/rotary-gala.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/rotary-gala.png" width="480" height="640" loading="lazy" alt="Rotary evening event with formal wear and Rotary lapel pins, festive lighting.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Rotary fellowship</strong> — gala lighting, Rotary pins</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/rotaract-banner.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/rotaract-banner.png" width="480" height="640" loading="lazy" alt="Beside the Rotaract Club of Beau Bassin Rose Hill banner with Service Above Self.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Rotaract Beau Bassin / Rose Hill</strong> — club banner</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/gallery-denim-outdoor.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/gallery-denim-outdoor.png" width="480" height="640" loading="lazy" alt="Casual outdoor selfie with denim jacket and cap against blue sky.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Outdoors</strong> — denim, blue sky</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/gallery-hiking.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/gallery-hiking.png" width="480" height="640" loading="lazy" alt="On a mountain ridge with forested hills and ocean in the distance.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Hiking</strong> — ridge line, sea view</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/gallery-boat.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/gallery-boat.png" width="480" height="640" loading="lazy" alt="Selfie on a boat with blue water and green coastline.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>On the water</strong> — boat day</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/gallery-beach-day.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/gallery-beach-day.png" width="480" height="640" loading="lazy" alt="Bright beach day with white shirt and cap.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Beach day</strong> — sun, sea, travel</figcaption>
+          </figure>
+        </li>
+        <li class="gallery-grid__item">
+          <figure class="photo-card">
+            <a href="assets/photos/gallery-beach-sunset.png" target="_blank" rel="noopener noreferrer" class="photo-card__link">
+              <img src="assets/photos/gallery-beach-sunset.png" width="480" height="640" loading="lazy" alt="Beach at sunset with warm colours in the sky.">
+            </a>
+            <figcaption class="photo-card__cap"><strong>Sunset</strong> — coast at dusk</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <p class="cta-row cta-row--spaced"><a class="btn btn--ghost" href="index.html">← Back to profile</a></p>
+    </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="site-footer__inner">
+          <p><strong>Sebastien Alessandro Arokeum</strong> — MBA, PMP</p>
+          <p class="site-footer__links">
+            <a href="index.html">Profile</a>
+            · <a href="https://www.linkedin.com/in/sebastien-alessandro-arokeum/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            · <a href="mailto:sebastien.arokeum@gmail.com">Email</a>
+          </p>
+          <p class="site-footer__build">Gallery and profile: static pages, AI-assisted editing.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="theme-init.js" defer></script>
+</body>
+</html>
