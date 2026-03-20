@@ -2,6 +2,8 @@
 
 Static profile site for **Sebastien Alessandro Arokeum** — open `index.html` in a browser or deploy the folder to any static host.
 
+**Repository:** [github.com/sebo964/personalprofile_sebastienarokeum](https://github.com/sebo964/personalprofile_sebastienarokeum)
+
 ## Local preview
 
 ```bash
