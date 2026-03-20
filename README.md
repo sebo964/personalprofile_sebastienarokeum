@@ -13,12 +13,20 @@ python3 -m http.server 8080
 # then visit http://localhost:8080
 ```
 
-## Deploy
+## GitHub Pages (recommended for this repo)
 
-- **Netlify / Vercel**: drag and drop this folder, or connect a Git repo pointing at the repository root.
-- **GitHub Pages**: enable Pages for the branch that contains `index.html` at repo root, or use the `docs/` folder with `index.html` inside it.
+**Live URL (after setup):** [https://sebo964.github.io/personalprofile_sebastienarokeum/](https://sebo964.github.io/personalprofile_sebastienarokeum/)
 
-No build step is required.
+1. In the repo on GitHub, open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+3. Push to `main` (or run the workflow manually under **Actions**). The workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) publishes `index.html`, `gallery.html`, CSS/JS, and `assets/` only.
+4. The first run may ask you to **approve** the `github-pages` environment (Settings → Environments → github-pages).
+
+No build toolchain is required—only a small “assemble” step in the workflow.
+
+## Other hosts
+
+- **Netlify / Vercel**: drag and drop this folder, or connect the Git repo; use repository root as the publish directory.
 
 ## Contents
 
