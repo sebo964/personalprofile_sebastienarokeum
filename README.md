@@ -30,9 +30,10 @@ No build toolchain is required—only a small “assemble” step in the workflo
 
 ## Versioning
 
-- **Source of truth:** [`version.js`](version.js) — set `window.__SITE_VERSION__` to a [semver](https://semver.org/) string (e.g. `1.0.0`, `1.1.0`).
-- The **sidebar** (bottom of the menu rail) shows a subtle **`v1.0.0`**-style label on both pages (via `theme-init.js`).
-- Optional: create matching **git tags** after releases, e.g. `git tag v1.0.0 && git push origin v1.0.0`.
+- **Source of truth:** [`version.js`](version.js) — set `window.__SITE_VERSION__` to a [semver](https://semver.org/) string (e.g. `1.1.0`).
+- **Changelog:** [`CHANGELOG.md`](CHANGELOG.md) — human-readable release notes; update it whenever you bump the version.
+- The **sidebar** (bottom of the menu rail) shows a subtle **`v…`** label on both pages (via `theme-init.js`).
+- Optional: create matching **git tags** after releases, e.g. `git tag v1.1.0 && git push origin v1.1.0`.
 
 ## Contents
 
@@ -40,5 +41,6 @@ No build toolchain is required—only a small “assemble” step in the workflo
 - `gallery.html` — full photo gallery
 - `styles.css` — layout, themes, and gallery grid
 - `theme-init.js` — themes, drawer, section label
-- `version.js` — public semver (footer + `data-site-version` on `<html>`)
-- `assets/` — certificate thumbnails; `assets/photos/` — profile and lifestyle images
+- `version.js` — public semver (`data-site-version` on `<html>`, sidebar label)
+- `CHANGELOG.md` — release history (not deployed to Pages; repo-only)
+- `assets/` — qualification scans (MBA, PMP, school/university), certificate thumbnails; `assets/photos/` — profile and lifestyle images
