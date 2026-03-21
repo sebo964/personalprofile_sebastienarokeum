@@ -197,7 +197,17 @@
     window.addEventListener('resize', sync);
   }
 
+  function syncSiteVersion() {
+    var el = document.getElementById('site-version');
+    if (!el) return;
+    var v = typeof window.__SITE_VERSION__ === 'string' ? window.__SITE_VERSION__.trim() : '';
+    if (!v) return;
+    el.textContent = 'v' + v;
+    el.setAttribute('title', 'Site release ' + v);
+  }
+
   function initThemeControls() {
+    syncSiteVersion();
     syncThemeSelect();
     syncThemeToggle();
     syncMeta();
